@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Card.css"
 
 const Card = (props) => {
 
@@ -11,9 +12,10 @@ const Card = (props) => {
     const images = importAll(require.context('../../assets', false, /\.(png|jpe?g|svg)$/));
 
     const imgSrc = (images[props.name + '.png'])
+
     return (
-        <div>
-            <img src={imgSrc} />
+        <div className="cardContainer">
+            <img className="cardImage" src={imgSrc} alt="" />
         </div>
     )
 }

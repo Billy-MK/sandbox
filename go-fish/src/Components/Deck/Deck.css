@@ -1,0 +1,4 @@
+.deckCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
