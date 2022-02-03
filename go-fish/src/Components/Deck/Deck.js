@@ -6,6 +6,7 @@ const Deck = (props) => {
     const [deck, setDeck] = useState([]);
 
     let array = [];
+    let revealedCard = "";
     
     function shuffleArray(array) {
         let curId = array.length;
@@ -30,6 +31,12 @@ const Deck = (props) => {
         setDeck(array);
     }
 
+    const flipCard = () => {
+        setDeck((prevDeck) => {
+            prevDeck.slice(0)
+        })
+        console.log(deck)
+    }
     const cardConversionObject = {
       1: "2_of_clubs",
       2: "2_of_diamonds",
@@ -88,6 +95,13 @@ const Deck = (props) => {
     return (
         <div>
             <button onClick={generateShuffledDeck}>Shuffle</button>
+            <button onClick={flipCard}>Flip Card</button>
+            <div>
+                <Card name="back" />
+            </div>
+            <div>
+                <Card name={cardConversionObject[deck[0]]} />
+            </div>
             <div className="deckCardsContainer">
                 {deck.map((cardNumber) => {
                     return <Card name={cardConversionObject[cardNumber]} key={cardNumber} />
