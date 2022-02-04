@@ -1,3 +1,40 @@
-.test {
-    color: red;
+.formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+form {
+    padding: 30px;
+    border-radius: 20px;
+    background-color: white;
+    width: 50%;
+}
+
+.label {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 2px solid rgba(182, 182, 182, 0.808);
+    height: 1.5rem;
+    width: 100%;
+}
+
+.submitButton {
+    background-color: rgb(75, 0, 75);
+    color: white;
+    border: none;
+    height: 30px;
+    font-weight: bold;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.submitButton:hover {
+    cursor: pointer;
 }
