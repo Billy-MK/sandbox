@@ -17,7 +17,10 @@ const Form = (props) => {
     const submitForm = (event) => {
         event.preventDefault();
         props.onSubmitUser({username: username, age: age});
-        
+        document.getElementById('age').value = '';
+        setUsername('');
+        document.getElementById('username').value = '';
+        setAge('');
     }
 
     return (
