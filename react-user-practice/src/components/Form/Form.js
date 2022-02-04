@@ -6,7 +6,7 @@ import Modal from "../Modal/Modal"
 const Form = (props) => {
     const [username, setUsername] = useState('');
     const [age, setAge] = useState('');
-    const [showModal, setShowModal] = useState(false)
+    const [modal, setModal] = useState({display: false})
 
     const usernameChangeHandler = (event) => {
         setUsername(event.target.value);
@@ -19,7 +19,7 @@ const Form = (props) => {
     const submitForm = (event) => {
         event.preventDefault();
         if (username.trim().length < 1) {
-            setShowModal(true);
+            setModal({display: true, header: "Invalid input", body: "Username field cannot be blank."});
             return;
         }
         props.onSubmitUser({username: username, age: age});
@@ -30,7 +30,7 @@ const Form = (props) => {
     }
 
     const closeModal = () => {
-        setShowModal(false)
+        setModal({display: false})
     }
 
     return (
@@ -42,8 +42,7 @@ const Form = (props) => {
                 <input className={styles.input} onChange={ageChangeHandler} type="text" id="age" name="age"></input>
                 <button className={styles.submitButton} type="submit">Add User</button>
             </form>
-            {showModal ? <Modal closeModal={closeModal} header={"Error"} body={"This is an error message"} /> : null}
-            
+            {modal.display ? <Modal closeModal={closeModal} header={modal.header} body={modal.body} /> : null}
         </Container>
     )
 }
