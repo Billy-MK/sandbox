@@ -1,11 +1,14 @@
 import React from 'react';
-import styles from "./UserList.module.css"
+import styles from "./UserList.module.css";
+import Container from "../../UI/Container/Container"
 
 const UserList = () => {
 
 
     return (
-        <div></div>
+        <Container>
+            Test
+        </Container>
     )
 }
 

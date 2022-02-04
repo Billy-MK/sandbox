@@ -3,4 +3,12 @@
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+    
+}
+
+.innerContainer {
+    padding: 30px;
+    border-radius: 20px;
+    background-color: white;
+    width: 50%;
 }
