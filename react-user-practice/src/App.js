@@ -5,16 +5,25 @@ import React, {useState} from 'react';
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [id, setId] = useState(0);
 
   const handleUserSubmission = (user) => {
-    setUsers([...users, user]);
-    console.log(users);
+    setUsers([...users, {username: user.username, age: user.age, id: id}]);
+    setId(prevId => {
+      return prevId + 1
+    })
+  }
+
+  const removeUser = (userId) => {
+    setUsers(prevUsers => {
+      return prevUsers.filter(user => user.id !== userId)
+    })
   }
 
   return (
     <div className="App">
       <Form onSubmitUser={handleUserSubmission} />
-      <UserList users={users} />
+      <UserList removeUser={removeUser} users={users} />
     </div>
   );
 }

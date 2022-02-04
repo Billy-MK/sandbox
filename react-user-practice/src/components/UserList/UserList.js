@@ -7,7 +7,7 @@ const UserList = (props) => {
     return (
         <Container>
             {props.users.map((user) => {
-                return <User key={Math.random()} username={user.username} age={user.age}></User>
+                return <User removeUser={props.removeUser} key={Math.random()} username={user.username} age={user.age} id={user.id}></User>
             })}
         </Container>
     )
