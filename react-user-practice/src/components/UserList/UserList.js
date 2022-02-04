@@ -4,11 +4,9 @@ import Container from "../../UI/Container/Container"
 import User from "../User/User"
 
 const UserList = (props) => {
-    const [users, setUsers] = useState([]);
-
     return (
         <Container>
-            {users.map((user) => {
+            {props.users.map((user) => {
                 return <User key={Math.random()} username={user.username} age={user.age}></User>
             })}
         </Container>

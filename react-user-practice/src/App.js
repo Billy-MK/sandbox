@@ -13,10 +13,8 @@ function App() {
 
   return (
     <div className="App">
-
-
       <Form onSubmitUser={handleUserSubmission} />
-      <UserList />
+      <UserList users={users} />
     </div>
   );
 }
