@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from "./User.module.css"
 
-const User = () => {
+const User = (props) => {
 
 
     return (
-        <div></div>
+        <div>{props.username}, {props.age}</div>
     )
 }
 
