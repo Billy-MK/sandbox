@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import styles from "./UserList.module.css";
+import React from 'react';
 import Container from "../../UI/Container/Container"
 import User from "../User/User"
 
