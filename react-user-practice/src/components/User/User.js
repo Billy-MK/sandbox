@@ -5,7 +5,10 @@ const User = (props) => {
 
 
     return (
-        <div>{props.username}, {props.age}</div>
+        <div>
+            <div>Username: {props.username}</div>
+            <div>Age: {props.age}</div>
+        </div>
     )
 }
 
