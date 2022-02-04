@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from "./Form.module.css"
+import styles from "./Form.module.css";
+import Container from "../../UI/Container/Container"
 
 const Form = () => {
 
@@ -9,7 +10,7 @@ const Form = () => {
     }
 
     return (
-        <div className={styles.formContainer}>
+        <Container>
             <form onSubmit={submitForm}>
                 <label className={styles.label} for="username">Username</label><br></br>
                 <input className={styles.input} type="text" id="username" name="username"></input>
@@ -17,7 +18,7 @@ const Form = () => {
                 <input className={styles.input} type="text" id="age" name="age"></input>
                 <button className={styles.submitButton} type="submit">Add User</button>
             </form>
-        </div>
+        </Container>
     )
 }
 
