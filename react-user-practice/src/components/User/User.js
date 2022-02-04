@@ -6,8 +6,7 @@ const User = (props) => {
 
     return (
         <div>
-            <div>Username: {props.username}</div>
-            <div>Age: {props.age}</div>
+            <div className={styles.user}>{props.username} ({props.age} years old)</div>
         </div>
     )
 }
