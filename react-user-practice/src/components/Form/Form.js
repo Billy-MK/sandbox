@@ -5,7 +5,7 @@ import Modal from "../Modal/Modal"
 
 const Form = (props) => {
     const [username, setUsername] = useState('');
-    const [age, setAge] = useState('');
+    const [age, setAge] = useState(0);
     const [modal, setModal] = useState({display: false})
 
     const usernameChangeHandler = (event) => {
@@ -20,6 +20,14 @@ const Form = (props) => {
         event.preventDefault();
         if (username.trim().length < 1) {
             setModal({display: true, header: "Invalid input", body: "Username field cannot be blank."});
+            return;
+        }
+        if (age.trim().length < 1) {
+            setModal({display: true, header: "Invalid input", body: "Age field cannot be blank."});
+            return;
+        }
+        if (isNaN(age.trim())) {
+            setModal({display: true, header: "Invalid input", body: "Age must be a number."});
             return;
         }
         props.onSubmitUser({username: username, age: age});
